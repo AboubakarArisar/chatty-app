@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 function App() {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
-  const socket = io.connect("http://localhost:3000");
+  const socket = io.connect("http://localhost:5000");
   const userName = nanoid(1);
 
   const sendChat = (e) => {
@@ -21,24 +21,21 @@ function App() {
       setChat([...chat, payload]);
     });
   });
-  useEffect(() => {
-    console.log(chat);
-  }, [chat]);
 
   return (
     <>
-      <h1 className='text-3xl text-center text-white font-bold bg-zinc-900 pt-6'>
-        Chatty app
-      </h1>
       <div className='flex flex-col items-center bg-zinc-900 w-full h-screen'>
+        <h1 className='text-3xl text-center text-white font-bold bg-zinc-900 pt-6'>
+          Chatty app
+        </h1>
         <div className='flex-grow p-5 w-full overflow-y-auto'>
           {chat.map((chatMessage, index) => (
             <div
               key={index}
-              className={`p-2 text-white ${
+              className={`p-2 text-white m-2 ${
                 chatMessage.userName === userName
                   ? "bg-gray-300"
-                  : "bg-blue-500"
+                  : "bg-red-700 "
               }`}
             >
               <span className='font-bold'>{chatMessage.userName}: </span>
