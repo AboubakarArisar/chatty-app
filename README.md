@@ -2,6 +2,7 @@ Chatty App
 Chatty App is a real-time chat application built using React for the frontend and Node.js with Socket.io for the backend.
 
 Directory Structure
+
 frontend: Contains the React application code.
 backend: Contains the Node.js server code.
 
@@ -10,17 +11,18 @@ Getting Started
 Prerequisites
 
 Ensure you have the following installed on your machine:
+
 Node.js
 npm or pnpm
 Installation
 
 Clone the repository:
-
 git clone https://github.com/AboubakarArisar/chatty-app.git
+
 cd chatty-app
+
 Install dependencies for both frontend and backend:
-sh
-Copy code
+
 cd frontend
 npm install
 # or
